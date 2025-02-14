@@ -1,0 +1,12 @@
+{
+  "name": "practical assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server"
+  },
+  "keywords": [],
+  "author": "Megan Palmquist",
+  "license": "ISC",
+  "description": ""
+}

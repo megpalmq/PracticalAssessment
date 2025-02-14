@@ -1,56 +1,66 @@
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 html, body {
- height: 100%;
- font-family: 'Benton Sans', sans-serif;;
+    height: 100%;
+    font-family: 'Benton Sans', sans-serif;
 }
 h1, h2, h3, h4, h5, h6, p {
- margin-bottom: 16px
-}/* Hero Section with Animated Gradient */
+    margin-bottom: 16px;
+}
+
+/* Hero Section with Animated Gradient */
 .hero {
-    height: 100vh;  /* Full height of the viewport */
+    height: 100vh;
     background: linear-gradient(45deg, rgb(153, 0, 0, 0.7), rgb(0, 98, 152, 0.7), rgb(255, 170, 0, 0.6), rgb(89, 38, 77, 0.7), #056e41b3) 0 0 / 1000% no-repeat, url(../images/iu.webp) 0 0 / cover no-repeat;
-    -webkit-animation: gradientAnimation 40s ease infinite;  /* Webkit for older browsers */
-    animation: gradientAnimation 40s ease infinite;  /* Animates the background */
+    -webkit-animation: gradientAnimation 40s ease infinite;
+    animation: gradientAnimation 40s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Gradient Animation Keyframes */
-@-webkit-keyframes gradientAnimation {
-    0% { background-position: 0% 30%, 0 0; }
-    50% { background-position: 100% 70%, 0 0; }
-    100% { background-position: 0% 30%, 0 0; }
-}
-
 @keyframes gradientAnimation {
     0% { background-position: 0% 30%, 0 0; }
     50% { background-position: 100% 70%, 0 0; }
     100% { background-position: 0% 30%, 0 0; }
 }
 
-/* Centered Title */
+/* Animated Title */
 h1 {
-    position: absolute;
-    top: 50%;  /* Centers vertically */
-    left: 50%;  /* Centers horizontally */
-    transform: translate(-50%, -50%);  /* Adjusts the positioning */
-    color: #fff;  /* White text color */
-    font: normal 600 72px/1 'Benton Sans', sans-serif;  /* Font styling */
-    text-align: center;  /* Centers text */
-    white-space: nowrap;  /* Prevents line breaks */
-    opacity: 0;  /* Make the title invisible initially */
-    animation: slideIn 1s ease-out forwards, fadeIn 2s ease-out forwards; /* Slide-in + fade-in animation */
+    color: #fff;
+    font: normal 600 72px/1 'Benton Sans', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0;
+    animation: slideIn 1.5s ease-out forwards, fadeIn 2s ease-out forwards;
 }
-h3{
+
+/* Keyframes for Slide-in and Fade-in */
+@keyframes slideIn {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Subtitle with Animation */
+h3 {
     position: absolute;
-    top: 60%;  /* Centers vertically */
+    top: 60%;
     left: 10%;
     color: white;
     font: normal 600 30px/1 'Benton Sans', sans-serif;
 }
-.LM{
+
+/* Animated Button */
+.LM {
     position: absolute;
     top: 70%;
     left: 10%;
@@ -61,83 +71,93 @@ h3{
     color: #fff;
     text-decoration: none;
     border: none;
-   
-
-}
-
-/* Keyframe for sliding in */
-@keyframes slideIn {
-    0% {
-        transform: translate(-50%, -50%) translateX(-100%); /* Starts off the screen to the left */
-        opacity: 0;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: buttonPop 1s ease-out 1.5s forwards;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    &:hover {
+        background-color: #990000;
+        color: white;
+        transform: scale(1.05); /* Slightly enlarges on hover */
     }
-    100% {
-        transform: translate(-50%, -50%) translateX(0); /* Ends in the center */
-        opacity: 1;
-    }
-}
 
-/* Fade-in effect */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+    &:active {
+        transform: scale(0.95); /* Shrinks slightly when clicked */
     }
 }
 
-/* Subtitle styling */
-h1 span {
-    display: block;
-    margin-top: 1em;  /* Adds spacing above the subtitle */
-    font-size: 40px;  /* Smaller font size for subtitle */
-    font-weight: 300;  /* Lighter weight for subtitle */
+/* Button Animation */
+@keyframes buttonPop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
+
+/* Content Section */
 .container {
     text-align: center;
     background-color: #F8F9FA;
-   
 }
 
+/* Content with Fade-in Effect */
 .content {
     background-color: white;
     width: 1000px;
     margin: 0 auto;
-    display: flex; /* Enables flexbox for horizontal layout */
+    display: flex;
+    animation: fadeUp 1.5s ease-in-out;
+}
+
+/* Image Animation */
+@keyframes fadeUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 .comp-cont {
-    display: flex; /* Aligns children in a row */
-    align-items: center; /* Vertically centers the content */
-    justify-content: space-between; /* Places items at the edges of the container */
-    width: 100%; /* Ensures it takes full width of the parent */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
+/* Image with Zoom-in Effect */
 .comp {
     background-image: url(../images/comp.png);
-    width: 350px;  /* Set width of image */
-    height: 350px;  /* Set height of image */
-    background-position: center;  /* Centers image */
-    background-repeat: no-repeat;  /* Prevents image repetition */
-    background-size: contain;  /* Ensures the image is fully visible */
-    object-fit: contain;  /* For <img> tags if used instead of background */
+    width: 350px;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: contain;
     margin-left: 30px;
-    margin-top: 70px; /* Space between image and text */
+    margin-top: 70px;
+    animation: zoomIn 1.5s ease-in-out;
 }
 
+@keyframes zoomIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
 
-/* Pink Text Container on the Right */
+/* Text Box Animation */
 .T1 {
     text-align: right;
-    width: 60%; /* Takes 60% of the container width */
+    width: 60%;
     background-color: #990000;
-    padding: 10px; 
-    color: white; /* Adds some space around the text */
+    padding: 10px;
+    color: white;
     height: 250px;
     border-radius: 20px;
+    animation: fadeLeft 1.5s ease-in-out;
 }
-.T2{
+
+@keyframes fadeLeft {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Additional Content */
+.T2 {
     background-color: #fff;
     height: 400px;
     margin-top: 10px;
@@ -145,58 +165,111 @@ h1 span {
     text-align: left;
     color: #990000;
     padding: 20px;
-}
-h2 {
-    margin: 0; /* Optional: remove margin to avoid extra space */
+  
 }
 
-p {
-    margin: 0; /* Optional: remove margin */
-}
+/* Image Container */
 .image-container {
     display: flex;
-    img{
-        border-radius: 20px;
-        width: 50%;
-        margin-top: -80px;
-        margin-bottom: 50px
-    }
-    .text{
-        flex-direction: column;
-        margin-right: 20px;
-        margin-top: 80px;
-        .bad{
-            border-radius: 20px;
-            background-color: #990000;
-            padding: 30px;
-            justify-content: center;
-            color: #fff;
-        }
-        .good{
-            border-radius: 20px;
-            background-color: #056e41;
-            padding: 30px;
-            justify-content: center;
-            color: #fff;
-            margin-top: 30px;
-        }
-    }
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
 
+/* Round Border Images */
+img {
+    border-radius: 20px;
+    width: 50%;
+    margin-top: -80px;
+    margin-bottom: 50px;
+}
+
+/* Animated Text Blocks */
+.text {
+    flex-direction: column;
+    margin-right: 20px;
+    margin-top: 80px;
+}
+
+.bad, .good {
+    border-radius: 20px;
+    padding: 30px;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+
+.bad {
+    background-color: #990000;
+}
+
+.good {
+    background-color: #056e41;
+    margin-top: 30px;
+}
+
+.BP {
+    position: relative;
+    background-color: #f0f0f0; /* Start with dimmed color */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: left;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out, color 0.4s ease-in-out;
+    margin-bottom: 100px;
+}
+
+/* Pseudo-element for the animated effect */
+.BP::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    background-color: #990000; /* Full color */
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Ensure text stays above the effect */
+.BP h2,
+.BP p {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease-in-out;
+}
+
+/* On hover, background expands */
+.BP:hover::before {
+    width: 250%;
+    height: 250%;
+}
+
+/* Keep background red after animation */
+.BP.active::before {
+    width: 250%;
+    height: 250%;
+    background-color: #990000; /* Keep it red */
+}
+
+/* Keep text white after animation */
+.BP.active h2,
+.BP.active p {
+    color: white;
 }
 
 
-.BP{
-    background-color: #990000;
-    width: 100%;
-    height: 400px;
-    padding: 30px;
-    text-align: left;
-    color: white;
-    margin-bottom: 100px;
-    .expect{
-        margin-top:20px ;
-        text-align: right;
-        .contact{
+/* Expect Section */
+.expect {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Contact Button */
+.contact {
     background-color: #fff;
     border-radius: 20px;
     font-size: 18px;
@@ -204,10 +277,36 @@ p {
     text-decoration: none;
     border: none;
     padding: 10px;
+    animation: buttonPop 1.5s ease-in-out;
 
-        }
+    /* Smooth transition for hover effects */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #990000;
+        color: white;
+        transform: scale(1.05); /* Slightly enlarges on hover */
+    }
+
+    &:active {
+        transform: scale(0.95); /* Shrinks slightly when clicked */
     }
 }
+
+/* Optional Button Pop Animation */
+@keyframes buttonPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Animated Background Section */
 .NA {
     width: 100%;
     height: 300px;
@@ -216,28 +315,81 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    display: flex; /* Enables flexbox */
-    justify-content: center; /* Centers .tt horizontally */
-    align-items: center; /* Centers .tt vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+    border-radius: 30px;
 }
 
+/* Animated Box */
 .tt {
     border-radius: 40px;
     width: 60%;
     background-color: white;
     color: #990000;
     padding: 20px;
-    text-align: center; /* Ensures text is centered inside */
+    text-align: center;
+    animation: bounceIn 1.5s ease-in-out;
 }
-.dyk{
+
+/* Bounce Effect */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Call-to-Action Button */
+.dyk {
     background-color: #990000;
     border-radius: 20px;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
     border: none;
-    margin-top: 20px;
     padding: 10px;
+    animation: buttonPop 1.5s ease-in-out;
+}
 
+/* General class for hidden elements before scrolling */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Fade-in effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+/* Slide-in from left */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+/* Slide-in from right */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+/* Scale-up effect */
+.scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-out;
+}
+
+/* When in view, these styles apply */
+.show {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
 }
