@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 16px;
 }
 
-/* Hero Section with Animated Gradient */
+
 .hero {
     height: 100vh;
     background: linear-gradient(45deg, rgb(153, 0, 0, 0.7), rgb(0, 98, 152, 0.7), rgb(255, 170, 0, 0.6), rgb(89, 38, 77, 0.7), #056e41b3) 0 0 / 1000% no-repeat, url(../images/iu.webp) 0 0 / cover no-repeat;
@@ -22,14 +22,13 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
 }
 
-/* Gradient Animation Keyframes */
 @keyframes gradientAnimation {
     0% { background-position: 0% 30%, 0 0; }
     50% { background-position: 100% 70%, 0 0; }
     100% { background-position: 0% 30%, 0 0; }
 }
 
-/* Animated Title */
+
 h1 {
     color: #fff;
     font: normal 600 72px/1 'Benton Sans', sans-serif;
@@ -39,7 +38,7 @@ h1 {
     animation: slideIn 1.5s ease-out forwards, fadeIn 2s ease-out forwards;
 }
 
-/* Keyframes for Slide-in and Fade-in */
+
 @keyframes slideIn {
     0% { transform: translateY(-100px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -50,7 +49,7 @@ h1 {
     100% { opacity: 1; }
 }
 
-/* Subtitle with Animation */
+
 h3 {
     position: absolute;
     top: 60%;
@@ -59,7 +58,7 @@ h3 {
     font: normal 600 30px/1 'Benton Sans', sans-serif;
 }
 
-/* Animated Button */
+
 .LM {
     position: absolute;
     top: 70%;
@@ -78,27 +77,27 @@ h3 {
     &:hover {
         background-color: #990000;
         color: white;
-        transform: scale(1.05); /* Slightly enlarges on hover */
+        transform: scale(1.05); 
     }
 
     &:active {
-        transform: scale(0.95); /* Shrinks slightly when clicked */
+        transform: scale(0.95); 
     }
 }
 
-/* Button Animation */
+
 @keyframes buttonPop {
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Content Section */
+
 .container {
     text-align: center;
     background-color: #F8F9FA;
 }
 
-/* Content with Fade-in Effect */
+
 .content {
     background-color: white;
     width: 1000px;
@@ -107,7 +106,7 @@ h3 {
     animation: fadeUp 1.5s ease-in-out;
 }
 
-/* Image Animation */
+
 @keyframes fadeUp {
     0% { transform: translateY(50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -120,7 +119,6 @@ h3 {
     width: 100%;
 }
 
-/* Image with Zoom-in Effect */
 .comp {
     background-image: url(../images/comp.png);
     width: 350px;
@@ -139,7 +137,7 @@ h3 {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Text Box Animation */
+
 .T1 {
     text-align: right;
     width: 60%;
@@ -156,7 +154,7 @@ h3 {
     100% { transform: translateX(0); opacity: 1; }
 }
 
-/* Additional Content */
+
 .T2 {
     background-color: #fff;
     height: 400px;
@@ -168,14 +166,14 @@ h3 {
   
 }
 
-/* Image Container */
+
 .image-container {
     display: flex;
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out 1s forwards;
 }
 
-/* Round Border Images */
+
 img {
     border-radius: 20px;
     width: 50%;
@@ -183,7 +181,6 @@ img {
     margin-bottom: 50px;
 }
 
-/* Animated Text Blocks */
 .text {
     flex-direction: column;
     margin-right: 20px;
@@ -210,7 +207,7 @@ img {
 
 .BP {
     position: relative;
-    background-color: #f0f0f0; /* Start with dimmed color */
+    background-color: #f0f0f0;
     padding: 40px;
     border-radius: 20px;
     text-align: left;
@@ -219,7 +216,7 @@ img {
     margin-bottom: 100px;
 }
 
-/* Pseudo-element for the animated effect */
+
 .BP::before {
     content: "";
     position: absolute;
@@ -227,14 +224,14 @@ img {
     left: 50%;
     width: 0%;
     height: 0%;
-    background-color: #990000; /* Full color */
+    background-color: #990000; 
     transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
 
-/* Ensure text stays above the effect */
+
 .BP h2,
 .BP p {
     position: relative;
@@ -242,33 +239,32 @@ img {
     transition: color 0.4s ease-in-out;
 }
 
-/* On hover, background expands */
 .BP:hover::before {
     width: 250%;
     height: 250%;
 }
 
-/* Keep background red after animation */
+
 .BP.active::before {
     width: 250%;
     height: 250%;
-    background-color: #990000; /* Keep it red */
+    background-color: #990000;
 }
 
-/* Keep text white after animation */
+
 .BP.active h2,
 .BP.active p {
     color: white;
 }
 
 
-/* Expect Section */
+
 .expect {
     margin-top: 20px;
     text-align: right;
 }
 
-/* Contact Button */
+
 .contact {
     background-color: #fff;
     border-radius: 20px;
@@ -278,22 +274,20 @@ img {
     border: none;
     padding: 10px;
     animation: buttonPop 1.5s ease-in-out;
-
-    /* Smooth transition for hover effects */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
 
     &:hover {
         background-color: #990000;
         color: white;
-        transform: scale(1.05); /* Slightly enlarges on hover */
+        transform: scale(1.05); 
     }
 
     &:active {
-        transform: scale(0.95); /* Shrinks slightly when clicked */
+        transform: scale(0.95); 
     }
 }
 
-/* Optional Button Pop Animation */
+
 @keyframes buttonPop {
     0% {
         transform: scale(0.8);
@@ -306,7 +300,7 @@ img {
 }
 
 
-/* Animated Background Section */
+
 .NA {
     width: 100%;
     height: 300px;
@@ -323,7 +317,6 @@ img {
     border-radius: 30px;
 }
 
-/* Animated Box */
 .tt {
     border-radius: 40px;
     width: 60%;
@@ -334,14 +327,14 @@ img {
     animation: bounceIn 1.5s ease-in-out;
 }
 
-/* Bounce Effect */
+
 @keyframes bounceIn {
     0% { transform: scale(0.5); opacity: 0; }
     50% { transform: scale(1.1); opacity: 1; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Call-to-Action Button */
+
 .dyk {
     background-color: #990000;
     border-radius: 20px;
@@ -353,47 +346,46 @@ img {
     animation: buttonPop 1.5s ease-in-out;
 }
 
-/* General class for hidden elements before scrolling */
+
 .hidden {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
 }
 
-/* Fade-in effect */
+
 .fade-in {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-out;
 }
 
-/* Slide-in from left */
+
 .slide-in-left {
     opacity: 0;
     transform: translateX(-100px);
     transition: all 1s ease-out;
 }
 
-/* Slide-in from right */
+
 .slide-in-right {
     opacity: 0;
     transform: translateX(100px);
     transition: all 1s ease-out;
 }
 
-/* Scale-up effect */
 .scale-up {
     opacity: 0;
     transform: scale(0.8);
     transition: all 1s ease-out;
 }
 
-/* When in view, these styles apply */
+
 .show {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
 }
-/* Tablets (max-width: 1024px) */
+
 @media screen and (max-width: 1024px) {
     h1 {
         font-size: 48px;
@@ -446,7 +438,6 @@ img {
     }
 }
 
-/* Mobile (max-width: 768px) */
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 36px;
@@ -504,7 +495,7 @@ img {
     }
 }
 
-/* Small Mobile (max-width: 480px) */
+
 @media screen and (max-width: 480px) {
     h1 {
         font-size: 28px;
@@ -558,11 +549,9 @@ img {
         padding: 15px;
     }
 }
-/* Default Styles (Desktop) */
+
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    
     gap: 20px;
     padding: 20px;
 }
@@ -579,8 +568,24 @@ img {
 .image-container img:hover {
     transform: scale(1.05);
 }
+@media screen and (max-width: 1024px) {
+    .image-container {
+        gap: 15px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
 
-/* Tablet View (max-width: 768px) */
+    .image-container img {
+        max-width: 50%; 
+        height: auto;
+        margin-top: 30px;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .image-container {
         gap: 15px;
@@ -592,7 +597,6 @@ img {
     }
 }
 
-/* Small Tablet & Large Mobile (max-width: 600px) */
 @media screen and (max-width: 600px) {
     .image-container {
         gap: 12px;
@@ -604,7 +608,7 @@ img {
     }
 }
 
-/* Mobile View (max-width: 480px) */
+
 @media screen and (max-width: 480px) {
     .image-container {
         flex-direction: column;
